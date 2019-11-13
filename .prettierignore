@@ -1,0 +1,5 @@
+node_modules
+.cache
+
+web/public/
+web/static/
