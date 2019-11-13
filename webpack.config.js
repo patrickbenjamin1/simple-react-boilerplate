@@ -38,6 +38,17 @@ module.exports = {
         test: /\.svg$/,
         loader: 'svg-inline-loader',
       },
+      {
+        test: /\.(jpg|ttf|svg|woff2?|eot|png|mp4|mp3|wav)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'assets/',
+            publicPath: 'assets',
+          },
+        },
+      },
     ],
   },
   devServer: {
