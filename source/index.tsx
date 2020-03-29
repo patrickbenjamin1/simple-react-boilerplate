@@ -5,4 +5,12 @@ import { Router } from './router';
 
 import './theme/theme.scss';
 
-ReactDOM.render(<Router />, document.getElementById('app'));
+const App: React.FunctionComponent = () => <Router />;
+
+const render = () => {
+  const entryPoint = document.getElementById('app');
+
+  ReactDOM.render(<App />, entryPoint);
+};
+
+render();
