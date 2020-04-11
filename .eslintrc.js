@@ -4,14 +4,7 @@ const error = 2;
 
 module.exports = {
   parser: '@typescript-eslint/parser',
-  extends: [
-    'plugin:@typescript-eslint/recommended',
-    'airbnb-base',
-    'prettier/@typescript-eslint',
-    'plugin:prettier/recommended',
-    'plugin:react/recommended',
-  ],
-  plugins: ['import', 'prettier', 'react', 'simple-import-sort'],
+  extends: ['airbnb-base', 'prettier/@typescript-eslint', 'plugin:prettier/recommended', 'plugin:react/recommended'],
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
@@ -19,43 +12,43 @@ module.exports = {
       jsx: true, // Allows for the parsing of JSX
     },
   },
-  env: {
-    browser: 'true',
-  },
   globals: {
     window: true,
     document: true,
+    localStorage: true,
+    IntersectionObserver: true,
+    MutationObserver: true,
   },
   rules: {
-    '@typescript-eslint/no-namespace': off,
-    '@typescript-eslint/interface-name-prefix': off,
-    '@typescript-eslint/explicit-function-return-type': off,
-    '@typescript-eslint/no-explicit-any': off,
-    '@typescript-eslint/no-parameter-properties': off,
-    '@typescript-eslint/camelcase': off,
-    '@typescript-eslint/explicit-member-accessibility': off,
+    // OFF
 
-    'import/no-unresolved': off,
-    'import/prefer-default-export': off,
+    // Typescript
+    ['@typescript-eslint/interface-name-prefix']: off,
+    ['@typescript-eslint/no-explicit-any']: off,
+    ['@typescript-eslint/no-namespace']: off,
+    ['@typescript-eslint/no-empty-interface']: off,
+    ['@typescript-eslint/no-empty-function']: off,
 
-    'react/no-unescaped-entities': off,
-    'react/prop-types': off,
+    // Import
+    ['import/extensions']: off,
+    ['import/prefer-default-export']: off,
+    ['import/no-unresolved']: off,
 
-    'simple-import-sort/sort': error,
-    'no-inner-declarations': off,
-    'class-methods-use-this': off,
-    'no-useless-constructor': off,
-    'no-undef': off,
-    'no-return-assign': off,
-    'global-require': off,
-    camelcase: off,
-    'consistent-return': off,
-    'no-plusplus': off,
-    'no-nested-ternary': off,
+    // Generic
+    ['no-empty-function']: off,
+    ['class-methods-use-this']: off,
+    ['no-inner-declarations']: off,
+    ['no-await-in-loop']: off,
+    ['no-useless-constructor']: off,
+    ['max-classes-per-file']: off,
+  },
+  env: {
+    jest: true,
+    node: true,
   },
   settings: {
     react: {
-      version: 'detect',
+      version: '16',
     },
   },
 };
