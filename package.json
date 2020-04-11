@@ -6,8 +6,8 @@
     "react-router-dom": "^5.1.2"
   },
   "scripts": {
-    "start": "TS_NODE_PROJECT=\"webpack.tsconfig.json\" webpack-dev-server --config webpack.config.js --mode development",
-    "build": "TS_NODE_PROJECT=\"webpack.tsconfig.json\" webpack --config webpack.config.js",
+    "start": "TS_NODE_PROJECT=\"webpack.tsconfig.json\" webpack-dev-server --config webpack.config.ts --mode development",
+    "build": "TS_NODE_PROJECT=\"webpack.tsconfig.json\" webpack --config webpack.config.ts",
     "clean": "rm -rf output",
     "clean-full": "rm -rf output node_modules"
   },
