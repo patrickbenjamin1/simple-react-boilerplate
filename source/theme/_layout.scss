@@ -1,35 +1,25 @@
-@import "./variables.scss";
-
-html {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-img {
-  @include centre-img();
-  &[data-entered-viewport="false"] {
-    background-color: $gray-light;
-  }
-}
-
-::selection {
-  background-color: rgba($colour-accent, 0.5);
-}
-
-body {
-  overflow-x: hidden;
-  width: 100vw;
-  height: auto;
-  padding: 0;
-  margin: 0;
-  background-color: $colour-background;
-}
-
-.view {
-  animation: fade-in 0.5s;
-}
+@use './variables/colours';
 
 * {
   box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: colours.$background;
+  color: colours.$foreground;
+  overflow-x: hidden;
+
+  ::selection {
+    background-color: transparentize(colours.$accent, 0.5);
+    color: colours.$white;
+  }
+}
+
+// see hooks/useDisableScroll for logic that adds this data attribute
+
+/* stylelint-disable-next-line selector-no-qualifying-type */
+html[data-scrolling-disabled='true'] {
+  overflow: hidden;
 }

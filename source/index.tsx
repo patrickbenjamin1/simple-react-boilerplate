@@ -1,16 +1,18 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-
-import { Router } from './router';
-
 import './theme/theme.scss';
 
-const App: React.FunctionComponent = () => <Router />;
+import * as React from 'react';
+import * as ReactDom from 'react-dom';
 
-const render = () => {
-  const entryPoint = document.getElementById('app');
+import { MainView } from './views/main';
 
-  ReactDOM.render(<App />, entryPoint);
-};
+const Providers: React.FC = ({ children }) => <>{children}</>;
 
-render();
+const App = (
+  <Providers>
+    <MainView />
+  </Providers>
+);
+
+const rootElement = document.getElementById('app');
+
+ReactDom.render(App, rootElement);
